@@ -3,7 +3,7 @@
 ## Usage
 
 ```sh
-git clone -r git@github.com:dotemacs/emacs-mcp
+git clone --recursive git@github.com:dotemacs/emacs-mcp
 ```
 
 And then:
