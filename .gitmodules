@@ -1,0 +1,3 @@
+[submodule "mcp-core"]
+	path = mcp-core
+	url = https://github.com/muthuishere/mcp-server-bash-sdk.git

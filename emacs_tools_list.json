@@ -1,0 +1,37 @@
+{
+  "tools": [
+    {
+      "name": "get_buffer_info",
+      "description": "Get information about the current Emacs buffer",
+      "parameters": {}
+    },
+    {
+      "name": "execute_elisp",
+      "description": "Execute Emacs Lisp code and return the result",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Emacs Lisp code to execute"
+          }
+        },
+        "required": ["code"]
+      }
+    },
+    {
+      "name": "search_buffer",
+      "description": "Search for a pattern in the current buffer",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "pattern": {
+            "type": "string",
+            "description": "Regular expression pattern to search for"
+          }
+        },
+        "required": ["pattern"]
+      }
+    }
+  ]
+}
