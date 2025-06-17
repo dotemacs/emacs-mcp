@@ -3,12 +3,16 @@
     {
       "name": "get_buffer_info",
       "description": "Get information about the current Emacs buffer",
-      "parameters": {}
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
     },
     {
       "name": "execute_elisp",
       "description": "Execute Emacs Lisp code and return the result",
-      "parameters": {
+      "inputSchema": {
         "type": "object",
         "properties": {
           "code": {
@@ -22,7 +26,7 @@
     {
       "name": "search_buffer",
       "description": "Search for a pattern in the current buffer",
-      "parameters": {
+      "inputSchema": {
         "type": "object",
         "properties": {
           "pattern": {

@@ -1,0 +1,13 @@
+{
+  "protocolVersion": "2024-11-05",
+  "serverInfo": {
+    "name": "EmacsServer",
+    "version": "1.0.0"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": true
+    }
+  },
+  "instructions": "This server provides Emacs integration via elisp evaluation. You can get buffer information, execute elisp code, and search within buffers."
+}

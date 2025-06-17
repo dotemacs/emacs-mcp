@@ -2,18 +2,20 @@
 # Emacs MCP server implementation
 # Provides Emacs integration via elisp evaluation
 
+# Override configuration paths BEFORE sourcing the core
+MCP_CONFIG_FILE="$(dirname "${BASH_SOURCE[0]}")/emacs_config.json"
+MCP_TOOLS_LIST_FILE="$(dirname "${BASH_SOURCE[0]}")/emacs_tools_list.json"
+MCP_LOG_FILE="$(dirname "${BASH_SOURCE[0]}")/emacs_mcp.log"
+
+# MCP Server Tool Function Guidelines:
+# 1. Name all tool functions with prefix "tool_" followed by the same name defined in tools_list.json
+# 2. Function should accept a single parameter "$1" containing JSON arguments
+# 3. For successful operations: Echo the expected result and return 0
+# 4. For errors: Echo an error message and return 1
+# 5. All tool functions are automatically exposed to the MCP server based on tools_list.json
+
 # Source the core MCP server implementation from the submodule
 source "$(dirname "${BASH_SOURCE[0]}")/mcp-core/mcpserver_core.sh"
-
-# Override the tools list handler to use Emacs-specific tools list
-handle_tools_list() {
-    local id="$1"
-    
-    # Read Emacs-specific tools list from JSON file in the root directory
-    local tools_file="$(dirname "${BASH_SOURCE[0]}")/emacs_tools_list.json"
-    local result=$(read_json_file "$tools_file")
-    create_response "$id" "$result" ""
-}
 
 # Check if emacsclient is available
 if ! command -v emacsclient &> /dev/null; then
